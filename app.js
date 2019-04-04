@@ -14,14 +14,19 @@ var getIP = require('ipware')().get_ip;
 var varyyyy;     
 //const {getHomePage} = require('./routes/index'); 
 //const {addPlayerPage, addPlayer, deletePlayer, editPlayer, editPlayerPage} = require('./routes/player');
-const { getloginwp, getresetwp , testapp } = require('./routes/securitydetail');   
-const { taskcatwp } = require('./routes/task'); 
-const { mytaskwp, mytaskreplywp, mytasklistwp, tasksrcwp, taskimgwp , taskoncomwp } = require('./routes/task');
-const { taskcreatewp, taskfimgwp, taskactivewp } = require('./routes/task');   
-const { taskrightside } = require('./routes/task');   
-const { taskfeedback, TaskApproveDis } = require('./routes/task'); 
 
-const { dashboardwp, notificationwp } = require('./routes/other');  
+
+const loginvar = require('./routes/securitydetail');  
+
+
+//const { getloginwp, getresetwp , testapp } = require('./routes/securitydetail');  
+//const { taskcatwp } = require('./routes/task'); 
+//const { mytaskwp, mytaskreplywp, mytasklistwp, tasksrcwp, taskimgwp , taskoncomwp } = require('./routes/task');
+//const { taskcreatewp, taskfimgwp, taskactivewp } = require('./routes/task');   
+//const { taskrightside } = require('./routes/task');   
+//const { taskfeedback, TaskApproveDis } = require('./routes/task'); 
+//const { dashboardwp, notificationwp } = require('./routes/other');  
+
 
 const port = 3555;       
 var localStorage = require('localStorage')  
@@ -93,42 +98,34 @@ app.post("/", express.static(path.join(__dirname, "./public")));
 //app.post('/add', getdataall);   
  
 
-app.post('/login', getloginwp); 
-   
-app.post('/test', testapp); 
 
-app.post('/forgetpass', getresetwp);   
+app.post('/login', loginvar.getloginwp); 
+
+//app.post('/test', testapp); 
+//app.post('/forgetpass', getresetwp);   
 
  
 //const userRoutes = require('./user'); 
 //Routes which handle requests
 //app.use('/user',userRoutes);  
  
-app.post('/mytask', mytaskwp);
 
 
-app.post('/mytaskreply',mytaskreplywp);
-app.post('/tasklist',mytasklistwp);  
-app.post('/tasksrc',tasksrcwp); 
-app.post('/taskcat',taskcatwp);  
-app.post('/taskcreate',taskcreatewp); 
-app.post('/dashboard',dashboardwp);     
-
-app.post('/taskcreateimg',taskfimgwp); 
-
-app.post('/imageUpload',taskimgwp);  
-
-app.post('/taskactive',taskactivewp);  
-
-app.post('/taskoncomp',taskoncomwp);   
-
-app.post('/taskrightside',taskrightside); 
-
-app.post('/taskapprove',TaskApproveDis); 
-
-app.post('/taskfeedback',taskfeedback);
-    
-app.post('/notification',notificationwp);   
+//app.post('/mytask', mytaskwp);
+//app.post('/mytaskreply',mytaskreplywp);
+//app.post('/tasklist',mytasklistwp);  
+//app.post('/tasksrc',tasksrcwp); 
+//app.post('/taskcat',taskcatwp);  
+//app.post('/taskcreate',taskcreatewp); 
+//app.post('/dashboard',dashboardwp);     
+//app.post('/taskcreateimg',taskfimgwp); 
+//app.post('/imageUpload',taskimgwp);  
+//app.post('/taskactive',taskactivewp);  
+//app.post('/taskoncomp',taskoncomwp);   
+//app.post('/taskrightside',taskrightside); 
+//app.post('/taskapprove',TaskApproveDis); 
+//app.post('/taskfeedback',taskfeedback); 
+//app.post('/notification',notificationwp);   
 
 
 
