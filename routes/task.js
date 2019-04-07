@@ -222,7 +222,7 @@ mytasklistwp:(req, res) =>   {
             Usremail=result[0].user_email;
             Usrurl=result[0].user_url; 
 
-             let usernameQuery1 = " SELECT * FROM `wp_posts`  WHERE `post_author` = '" + userid + "' and post_type ='fast_ticket'";       
+             let usernameQuery1 = " SELECT * FROM `wp_posts`  WHERE `post_author` = '" + userid + "' and post_type ='fast_ticket' order by ID desc";       
              db.query(usernameQuery1, (err1, result1) => {        
                  if (err1) {
                     return res.status(500).json({ message: 'errr5', status :500, msg:err1, wpstatus:0 });
